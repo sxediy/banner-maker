@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Flex } from 'antd';
-import { Uploader, Modal }  from '../shared/components'
+import { Modal, PrimaryButton }  from '../shared/components'
 import { CreateBannerForm } from './form/CreateBannerForm'
 import { useForm } from 'antd/es/form/Form';
 
@@ -27,13 +26,18 @@ const CreateBannerPage = () => {
     setIsModalVisible(false)
   }
 
-  const onSetLive = () => console.log('Set live')
+  const onSetLive = () => {
+    const values = form.getFieldsValue();
+    console.log('values', values)
+    console.log('Set live')
+  }
+
   
   return (
     <>
-    <Modal 
+    <PrimaryButton title='Click' onClick={() => setIsModalVisible(true)}/>
+    <Modal
       isModalVisible={isModalVisible}
-      openButton={{ openButtonType: 'primary', openButtonTitle: 'Click'}} 
       modalTitle='Create banner'
       footerType='A'
       footerData={[

@@ -1,36 +1,33 @@
 import React, { ReactNode } from 'react';
 import { Modal as AntdModal } from 'antd';
-import { PrimaryButton, LinkButton, TextButton, FooterTypeA, FooterTypeB } from '../../components';
+import { FooterTypeA, FooterTypeB } from '../../components';
 
 import './Modal.css'
 
 
 type Props = {
+    width?: string,
+    minWidth?: string,
+    maxWidth?: string,
     isModalVisible: boolean,
     setIsModalVisible: (value: boolean) => void,
-    openButton: { openButtonType: 'primary' | 'link' | 'text', openButtonTitle: string},
     modalTitle: string,
     footerType: 'A' | 'B',
     footerData: { footerTitle: string, footerHandle: () => void, className? : string }[],
     children?: ReactNode,
 }
 
-export const Modal: React.FC<Props>  = ({ 
+export const Modal: React.FC<Props>  = ({
+    width = '90%',
+    minWidth = '360px',
+    maxWidth = '900px',
     isModalVisible,
     setIsModalVisible,
-    openButton: {openButtonType, openButtonTitle}, 
     modalTitle, 
     footerType,
     footerData,
     children,
   }) => {
-
-  const OpenButtonComponent = (props) =>
-    <div> 
-     {openButtonType === 'primary' && <PrimaryButton  {...props} />}
-     {openButtonType === 'link' && <LinkButton  {...props} />}
-     {openButtonType === 'text' && <TextButton  {...props} />}
-    </div>
 
   const FooterComponent = (props) =>
     <div> 
@@ -44,8 +41,9 @@ export const Modal: React.FC<Props>  = ({
 
   return (
     <>
-     <OpenButtonComponent title={openButtonTitle} onClick={() => setIsModalVisible(true)}/>
       <AntdModal
+        width={width}
+        style={{ minWidth, maxWidth }}
         className='Modal'
         title={modalTitle}
         visible={isModalVisible}

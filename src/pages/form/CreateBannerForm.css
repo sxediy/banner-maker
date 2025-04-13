@@ -33,6 +33,10 @@
     width: 70%;
   }
 
+  .CreateBannerForm_startTime, .CreateBannerForm_endTime {
+    width: 30%;
+  }
+
   .CreateBannerForm_endDateButton {
     font-weight: 600;
 
