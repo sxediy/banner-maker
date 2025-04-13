@@ -2,6 +2,7 @@ import React from 'react';
 import { Radio, Row, Col } from 'antd';
 
 type Props = {
+  value: string,
   buttons: {
     value: string, 
     title: string,
@@ -9,14 +10,14 @@ type Props = {
   callBack?: (value: string) => void,
 }
 
-export const RadioButton: React.FC<Props> = ({ buttons, callBack }) =>  {
+export const RadioButton: React.FC<Props> = ({ value, buttons, callBack }) =>  {
 
   const handleChange = (e) => {
     callBack && callBack(e.target.value)
   }
   
   return (
-    <Radio.Group onChange={handleChange} style={{ padding: '16px 0'}}>
+    <Radio.Group value={value} onChange={handleChange} style={{ padding: '16px 0'}}>
     <Row>
       {buttons.map(({ value, title }) => 
         <Col span={12}>

@@ -11,8 +11,11 @@ type Props = {
 
 export const AudienceSwitcher: React.FC<Props> = ({ form }) => 
   <Form.Item name={['audience']} rules={[{ required: true }]} className='CreateBannerForm_audience'>
-    <RadioButton 
+    <RadioButton
+        value={form.getFieldValue('audience')}
         buttons={[{ value: 'allUsers', title: 'All users'}, { value: 'restricted', title: 'Restricted'}]}
         callBack={(value) => form.setFieldsValue({ audience: value})}
     />
   </Form.Item>
+  
+  

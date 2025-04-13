@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, PrimaryButton }  from '../shared/components'
 import { CreateBannerForm } from './form/CreateBannerForm'
 import { useForm } from 'antd/es/form/Form';
+import dayjs from 'dayjs';
 
 import './CreateBannerPage.css'
-
 
 const CreateBannerPage = () => {
     const [form] = useForm();
@@ -29,10 +29,25 @@ const CreateBannerPage = () => {
   const onSetLive = () => {
     const values = form.getFieldsValue();
     console.log('values', values)
-    console.log('Set live')
+    console.log('Set live clicked')
   }
 
-  
+  useEffect(() => {
+    // await call data from server ..
+    const initialFormData = {
+      mobileUploader: '',
+      webUploader: '',
+      bannerName: 'Music fest',
+      bannerURL: '',
+      startDate: dayjs('2024-02-17T22:03:00.000Z'),
+      startTime: dayjs('2024-02-17T22:03:00.000Z'),
+      audience: 'allUsers',
+    }
+    
+    // set initial data in form
+    form.setFieldsValue(initialFormData)
+  }, [])
+
   return (
     <>
     <PrimaryButton title='Click' onClick={() => setIsModalVisible(true)}/>
