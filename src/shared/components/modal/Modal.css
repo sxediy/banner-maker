@@ -1,0 +1,5 @@
+.Modal {
+    :where(.ant-modal .ant-modal-title){
+        font-size: 20px !important;
+    }
+}

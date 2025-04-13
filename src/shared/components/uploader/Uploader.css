@@ -1,0 +1,12 @@
+.Uploader_button {
+  border: 0;
+  background: none;
+   &:focus {
+    outline: none;
+  }
+}
+
+.Uploader_text {
+  margin-top: 8px;
+  color: gray;
+}

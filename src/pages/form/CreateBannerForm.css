@@ -1,0 +1,78 @@
+.CreateBannerForm_mobileUploader {
+  width: 35%;
+
+  :where(.css-dev-only-do-not-override-1d4w9r2).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select, :where(.css-dev-only-do-not-override-1d4w9r2).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload.ant-upload-select {
+     width: 100%;
+  }
+}
+
+.CreateBannerForm_webUploader {
+    width: 65%;
+
+    :where(.css-dev-only-do-not-override-1d4w9r2).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select, :where(.css-dev-only-do-not-override-1d4w9r2).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload.ant-upload-select {
+     width: 90%;
+
+    }
+  }
+
+  .CreateBannerForm_bannerName, .CreateBannerForm_bannerURL {
+    margin-bottom: 0;
+  }
+
+  .CreateBannerForm_helpText {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .CreateBannerForm_bannerNameBottomText, .CreateBannerForm_bannerURLBottomText {
+    margin: 3px 14px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+  }
+
+  .CreateBannerForm_startDate, .CreateBannerForm_endDate{
+    width: 70%;
+  }
+
+  .CreateBannerForm_endDateButton {
+    font-weight: 600;
+
+  }
+
+  .CreateBannerForm_alert {
+    background: rgba(0, 0, 0, 0.08);
+     border: none;
+     align-items: center;
+
+
+     :where(.css-dev-only-do-not-override-1d4w9r2 .ant-alert-with-description .ant-alert-message) {
+        font-weight: 600;
+     }
+
+     
+     :where(.css-dev-only-do-not-override-1d4w9r2 .ant-alert-warning .ant-alert-icon){
+        color: rgba(0, 0, 0, 1) !important;
+     }
+
+     :where(.css-dev-only-do-not-override-1d4w9r2 .ant-alert .ant-alert-close-icon) {
+        align-self: flex-start;
+     }
+  }
+
+  .CreateBannerForm_audience{
+    margin: 16px 0;
+  }
+
+  .CreateBannerForm_info {
+    background: #E5F6FD;
+    padding: 6px 16px;
+  }
+
+  .CreateBannerForm_seeAll {
+    font-weight: 600;
+  }
+
+ 
+
+
+
+ 
